@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528223606) do
+ActiveRecord::Schema.define(version: 20150528225157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20150528223606) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "commentstops", force: :cascade do |t|
+    t.integer  "comment_id"
+    t.integer  "stop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "commentstops", ["comment_id"], name: "index_commentstops_on_comment_id", using: :btree
+  add_index "commentstops", ["stop_id"], name: "index_commentstops_on_stop_id", using: :btree
 
   create_table "lines", force: :cascade do |t|
     t.integer  "line_id"
@@ -64,8 +74,22 @@ ActiveRecord::Schema.define(version: 20150528223606) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "userstops", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "stop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "userstops", ["stop_id"], name: "index_userstops_on_stop_id", using: :btree
+  add_index "userstops", ["user_id"], name: "index_userstops_on_user_id", using: :btree
+
   add_foreign_key "commentlines", "comments"
   add_foreign_key "commentlines", "lines"
+  add_foreign_key "commentstops", "comments"
+  add_foreign_key "commentstops", "stops"
   add_foreign_key "userlines", "lines"
   add_foreign_key "userlines", "users"
+  add_foreign_key "userstops", "stops"
+  add_foreign_key "userstops", "users"
 end
