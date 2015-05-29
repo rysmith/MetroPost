@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'welcome/index' => 'welcome#index', as: :welcome
+  get 'welcome/' => 'welcome#index', as: :welcome
 
   get 'users/' => 'users#index', as: :users
 
-  get 'users/new' => 'users#new', as: :user_new
+  get 'users/new' => 'users#new', as: :new_user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

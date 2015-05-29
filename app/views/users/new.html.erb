@@ -1,1 +1,16 @@
 <h1>Create a new user</h1>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br/>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br/>
+  <%= f.label :password_confirmation, "Confirm" %>
+  <%= f.password_field :password_confirmation %>
+  <br/>
+  <%= f.submit "Register", "class" => "btn btn-primary"%>
+<% end%>
+
