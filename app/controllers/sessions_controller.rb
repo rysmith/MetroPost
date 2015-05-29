@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
       #where does session come from?
       session[:user_id] = user.id
       flash[:success] = "you have been logged in as #{session[:user_id]}"
-      redirect_to users_path
+      redirect_to welcome_path
     else
       flash[:error] = "incorrect password or email"
       render :new
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = nil
     flash[:success] = "you have been logged out"
-    redirect_to users_path
+    redirect_to welcome_path
   end
 
 
