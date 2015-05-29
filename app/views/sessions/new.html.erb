@@ -1,0 +1,14 @@
+<h1>Sessions#new</h1>
+
+<!--here we are being explicit with where we want this to go-->
+<%= form_for @user,url: create_session_path do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br/>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br/>
+
+  <%= f.submit "Login" %>
+<% end%>
