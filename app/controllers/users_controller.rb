@@ -13,11 +13,11 @@ class UsersController < ApplicationController
 
     if User.create user_params
 
-      flash[:success] = 'you have been registered'
-      redirect_to users_path
+      flash[:success] = 'You have been registered, please login.'
+      redirect_to new_session_path
     else
-      flash[:error] = 'unable to sign you in'
-      render :new
+      flash[:error] = 'Unable to create a user account.'
+      redirect_to new_user
     end
 
   end
@@ -26,6 +26,6 @@ class UsersController < ApplicationController
 
   def user_params
     #white listing only the fields you want.  Always use params.require and dont assign incoming data right to your model
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end

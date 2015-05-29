@@ -25,18 +25,19 @@ class SessionsController < ApplicationController
       #and will be accessible until the user logs out.
       #where does session come from?
       session[:user_id] = user.id
-      flash[:success] = "you have been logged in as #{session[:user_id]}"
+      session[:user_username] = user.username
+      flash[:success] = "Welcome, #{session[:user_username]}"
       redirect_to welcome_path
     else
-      flash[:error] = "incorrect password or email"
-      render :new
+      flash[:error] = "incorrect password or email, give it another try..."
+      redirect_to new_session_path
     end
   end
 
   def destroy
 
     session[:user_id] = nil
-    flash[:success] = "you have been logged out"
+    flash[:success] = "You have been logged out"
     redirect_to welcome_path
   end
 

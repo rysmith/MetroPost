@@ -1,4 +1,7 @@
 <div class="container">
+  <% flash.each do |key,value|%>
+    <div class="<%= key %>"> <%= value %>  </div>
+  <% end %>
 
   <h1>Create Account</h1>
 
@@ -6,6 +9,9 @@
 
     <%= form_for @user do |f|%>
 
+      <%= f.label :username %>
+      <%= f.text_field :username, 'class' => 'form-control' %>
+      <br/>
       <%= f.label :email %>
       <%= f.email_field :email, 'class' => 'form-control' %>
       <br/>

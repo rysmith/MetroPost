@@ -1,8 +1,8 @@
 <nav>
   <% if current_user %>
-    <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-danger pull-right' %>
+    <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-link pull-right' %>
   <% else %>
-    <%= link_to 'Login', new_session_path, 'class' => 'btn btn-success pull-right' %>
+    <%= link_to 'Login', new_session_path, 'class' => 'btn btn-link pull-right' %>
   <% end %>
   <% flash.each do |key,value|%>
     <div class="<%= key %> pull-right"> <%= value %>  </div>
@@ -12,7 +12,9 @@
 <div class="jumbotron">
   <h1>Welcome to Metro Post</h1>
   <p>Metro Post is a place to share information about the LA metro rail service.</p>
-  <p> <%= link_to 'Sign Up', new_user_path, 'class' => 'btn btn-primary' %> </p>
+  <% unless current_user %>
+    <p> <%= link_to 'Sign Up', new_user_path, 'class' => 'btn btn-primary' %> </p>
+  <% end %>
 </div>
 
 
