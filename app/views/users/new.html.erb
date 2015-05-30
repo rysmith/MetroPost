@@ -1,4 +1,5 @@
 <div class="container">
+
   <% flash.each do |key,value|%>
     <div class="<%= key %>"> <%= value %>  </div>
   <% end %>
@@ -8,7 +9,6 @@
   <div class="form-group sign-up-form">
 
     <%= form_for @user do |f|%>
-
       <%= f.label :username %>
       <%= f.text_field :username, 'class' => 'form-control' %>
       <br/>
@@ -18,10 +18,10 @@
       <%= f.label :password %>
       <%= f.password_field :password, 'class' => 'form-control' %>
       <br/>
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation, 'Confirm Password' %>
       <%= f.password_field :password_confirmation, 'class' => 'form-control' %>
       <br/>
-      <%= f.submit "Register", "class" => "btn btn-primary"%>
+      <%= f.submit 'Register', 'class' => 'btn btn-primary' %>
     <% end%>
 
   </div>

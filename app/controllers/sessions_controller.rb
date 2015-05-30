@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{session[:user_username]}"
       redirect_to welcome_path
     else
-      flash[:error] = "incorrect password or email, give it another try..."
+      flash[:error] = 'incorrect password or email, give it another try...'
       redirect_to new_session_path
     end
   end
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
   def destroy
 
     session[:user_id] = nil
-    flash[:success] = "You have been logged out"
+    flash[:success] = 'You have been logged out'
     redirect_to welcome_path
   end
 

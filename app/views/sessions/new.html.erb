@@ -1,21 +1,25 @@
 <div class="container">
+
   <% flash.each do |key,value|%>
     <div class="bg-<%= key %>"> <%= value %>  </div>
   <% end %>
 
   <h1>Login</h1>
+
   <div class="sign-up-form">
+
     <!--here we are being explicit with where we want this to go-->
     <%= form_for @user,url: create_session_path do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, 'class'=> 'form-control' %>
+      <%= f.email_field :email, 'class' => 'form-control' %>
       <br/>
       <%= f.label :password %>
-      <%= f.password_field :password, 'class'=> 'form-control' %>
+      <%= f.password_field :password, 'class' => 'form-control' %>
       <br/>
 
-      <%= f.submit "Login", 'class' => 'btn btn-primary' %>
+      <%= f.submit 'Login', 'class' => 'btn btn-primary' %>
     <% end%>
+
   </div>
 </div>
