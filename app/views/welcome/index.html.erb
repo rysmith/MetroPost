@@ -1,18 +1,3 @@
-<nav>
-  <!--Toggle between the login and logout button links-->
-  <!-- current_user is a helper method exposed by the application controller-->
-
-  <% if current_user %>
-    <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-link pull-right' %>
-  <% else %>
-    <%= link_to 'Login', new_session_path, 'class' => 'btn btn-link pull-right' %>
-  <% end %>
-  <% flash.each do |key,value|%>
-    <div class="<%= key %> pull-right"> <%= value %>  </div>
-  <% end %>
-
-</nav>
-
 <div class="jumbotron">
 
   <h1>Welcome to Metro Post</h1>

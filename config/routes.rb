@@ -14,6 +14,14 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
 
+  get 'comments/index' => 'comments#index', as: :comments
+
+  get 'comments/show' => 'comments#show'
+
+  get 'comments/new' => 'comments#new'
+
+  get 'comments/edit' => 'comments#edit', as: :edit_comment
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

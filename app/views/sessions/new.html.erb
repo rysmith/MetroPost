@@ -4,22 +4,24 @@
     <div class="bg-<%= key %> flash-message"> <%= value %>  </div>
   <% end %>
 
-  <h1>Login</h1>
 
-  <div class="sign-up-form">
+  <div class="sign-up-wrapper">
+    <h1>Login</h1>
+    <div class="sign-up-form">
 
-    <!--here we are being explicit with where we want this to go-->
-    <%= form_for @user,url: create_session_path do |f| %>
+      <!--here we are being explicit with where we want this to go-->
+      <%= form_for @user,url: create_session_path do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, 'class' => 'form-control', 'placeholder' => 'example@metropost.la' %>
-      <br/>
-      <%= f.label :password %>
-      <%= f.password_field :password, 'class' => 'form-control', 'placeholder' => 'password' %>
-      <br/>
+        <%= f.label :email %>
+        <%= f.email_field :email, 'class' => 'form-control', 'placeholder' => 'example@metropost.la' %>
+        <br/>
+        <%= f.label :password %>
+        <%= f.password_field :password, 'class' => 'form-control', 'placeholder' => 'password' %>
+        <br/>
 
-      <%= f.submit 'Login', 'class' => 'btn btn-primary' %>
-    <% end%>
+        <%= f.submit 'Login', 'class' => 'btn btn-primary' %>
+      <% end%>
 
+    </div>
   </div>
 </div>
