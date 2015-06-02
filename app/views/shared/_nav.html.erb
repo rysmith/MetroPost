@@ -19,17 +19,16 @@
         <li><%=	link_to 'posts', comments_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+
         <!--Toggle between the login and logout button links-->
         <!-- current_user is a helper method exposed by the application controller-->
-
         <% if current_user %>
           <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-link navbar-btn pull-right' %>
+          <div class="navbar-text navbar-right"> <%= @welcome_message %>  </div>
         <% else %>
           <%= link_to 'Login', new_session_path, 'class' => 'btn btn-link navbar-btn pull-right' %>
         <% end %>
-        <% flash.each do |key,value|%>
-          <div class="<%= key %> navbar-text navbar-right"> <%= value %>  </div>
-        <% end %>
+
 
         </li>
       </ul>

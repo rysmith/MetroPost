@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
 
       #flash is sending a string for one get cycle
       #flash's argument (:success) should be used as a css class in the view
-      flash[:success] = "Welcome, #{session[:user_username]}"
+      flash[:success] = 'Login successful'
 
       #redirect the view to welcome#index
       redirect_to welcome_path
