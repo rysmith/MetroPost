@@ -1,26 +1,36 @@
 Rails.application.routes.draw do
 
+  #landing page
   get 'welcome/' => 'welcome#index', as: :welcome
 
+  #show all the users
   get 'users/' => 'users#index', as: :users
 
+  #GET the sign-up form, then POST the results to the db
   get 'users/new' => 'users#new', as: :new_user
-
   post '/users' => 'users#create', as: :create_user
 
+  #GET the login form, then create a new session
   get 'sessions/new' => 'sessions#new', as: :new_session
+  post 'sessions/create' => 'sessions#create',as: :create_session
 
-  post 'sessions/create' => 'sessions#create', as: :create_session
-
+  #once the user clicks logout, destroy the current session
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
 
+  #show all the comments
   get 'comments/index' => 'comments#index', as: :comments
 
-  get 'comments/show' => 'comments#show'
+  #GET the new comment form, then POST the results to the db
+  get 'comments/new' => 'comments#new', as: :new_comment
+  post 'comments/create' => 'comments#create', as: :create_comment
 
-  get 'comments/new' => 'comments#new'
-
+  #GET the edit comment form, then POST the new info to the db
   get 'comments/edit' => 'comments#edit', as: :edit_comment
+  patch 'comments/:id' => 'comments#update'
+
+  #show a particular comment
+  #this needs to be below the new#comment
+  get 'comments/:id' => 'comments#show', as: :comment
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

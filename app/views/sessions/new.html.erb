@@ -2,9 +2,10 @@
 
   <div class="sign-in-wrapper">
     <h1>Login</h1>
-    <div class="sign-up-form">
+    <div class="sign-in-form">
 
-      <!--here we are being explicit with where we want this to go-->
+      <!--here we are being explicit with the destination URI-->
+      <!--this ensures that params from our form is passed to the correct method-->
       <%= form_for @user,url: create_session_path do |f| %>
 
         <%= f.label :email %>

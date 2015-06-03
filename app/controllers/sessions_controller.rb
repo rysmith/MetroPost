@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
 
-  #create a new user object so the form in view/users/new.html.erb can do it's job
-  #this only cretes a user object
+  #create a new user object so the form in views/users/new.html.erb can do it's job
+  #this only creates a user object
   def new
     @user = User.new
   end
 
   #what's our goal?
   #receive user data from the view and give it to the model (POST)
-  #the model will handle the db interationc
+  #the model will handle the db interaction
   def create
 
     #the .where method generates a SQL statement in the db

@@ -2,6 +2,15 @@
 
   <h1>Welcome to Metro Post</h1>
   <p>Metro Post is a place to share information about the LA metro rail service.</p>
+  <div class='circles-jumbo'>
+    <%=	image_tag 'gold-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'red-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'purple-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'blue-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'expo-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'green-circle.png', 'class' => 'circle-img-jumbo'%>
+    <%=	image_tag 'silver-circle.png', 'class' => 'circle-img-jumbo'%>
+  </div>
 
   <!-- hide sign up button upon login -->
   <% unless current_user %>
@@ -14,6 +23,45 @@
   <% flash.each do |key,value|%>
     <div class="bg-<%= key %> flash-message"> <%= value %>  </div>
   <% end %>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="marketing">
+        <%=	image_tag 'post-icon.png' %>
+        <h2>Make A Post</h2>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <div class="marketing">
+        <%=	image_tag 'fav-icon.png' %>
+        <h2>Star A Route</h2>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <div class="marketing">
+        <%=	image_tag 'info-icon.png' %>
+        <h2>Stay Informed</h2>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
 </div>
 
 
