@@ -1,2 +1,19 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<div class="container">
+
+  <div class="new-comment-wrapper">
+    <h1>Edit Post</h1>
+    <div class="form-group new-comment-form">
+      <%= form_for @comment do |f| %>
+
+        <%=	f.label :comment_title %>
+        <%=	f.text_field :comment_title, 'class' => 'form-control' %>
+        <br/>
+        <%=	f.label :comment_text %>
+        <%=	f.text_area :comment_text, 'class' => 'form-control' %>
+        <br/>
+        <%= f.submit 'submit', 'class' => 'btn btn-primary' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

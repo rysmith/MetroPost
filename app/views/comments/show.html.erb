@@ -1,5 +1,6 @@
 <div class="container">
-  <h1><%= "Comment number #{@comment.id}" %></h1>
+  <h1><%= "Post number #{@comment.id}" %></h1>
   <h2><%= @comment.comment_title %></h2>
   <p><%=	@comment.comment_text %></p>
+  <%=	link_to 'Edit Post', edit_comment_path(@comment) %>
 </div>

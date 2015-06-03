@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post 'comments/create' => 'comments#create', as: :create_comment
 
   #GET the edit comment form, then POST the new info to the db
-  get 'comments/edit' => 'comments#edit', as: :edit_comment
+  get 'comments/:id/edit' => 'comments#edit', as: :edit_comment
   patch 'comments/:id' => 'comments#update'
 
   #show a particular comment

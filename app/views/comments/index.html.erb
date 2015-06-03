@@ -1,10 +1,10 @@
 <div class="container">
   <h1>Metro Information</h1>
-  <p>A list of the current metro posts</p>
+  <p>A list of the current metro posts.</p>
 
     <% @comments.each do |comment| %>
     <h3><%=	comment.comment_title %></h3>
     <p><%= comment.comment_text %></p>
-    <p><%= link_to 'show comment', comment %></p>
+    <p><%= link_to 'Show Post', comment %></p>
     <% end %>
 </div>
