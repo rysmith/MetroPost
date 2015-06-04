@@ -34,11 +34,17 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params.require(:comment).permit(:comment_title, :comment_text))
+    if @comment.update_attributes(params.require(:comment).permit(:comment_title, :comment_text, :user_id))
       redirect_to comments_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to comments_path
   end
 
 

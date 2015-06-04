@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get 'comments/:id/edit' => 'comments#edit', as: :edit_comment
   patch 'comments/:id' => 'comments#update'
 
+  delete 'comments/:id' => 'comments#destroy'
+
   #show a particular comment
   #this needs to be below the new#comment
   get 'comments/:id' => 'comments#show', as: :comment

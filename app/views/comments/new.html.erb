@@ -1,7 +1,6 @@
 <div class="container">
 
-  <div class="new-comment-wrapper">
-    <h1>Create a Post</h1>
+    <h1> <%=	image_tag 'post-icon.png' %> Create a Post</h1>
     <div class="form-group new-comment-form">
       <%= form_for @comment,url: create_comment_path do |f| %>
 
@@ -15,5 +14,5 @@
 
       <% end %>
     </div>
-  </div>
+
 </div>

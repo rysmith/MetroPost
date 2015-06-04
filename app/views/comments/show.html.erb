@@ -1,6 +1,9 @@
 <div class="container">
-  <h1><%= "Post number #{@comment.id}" %></h1>
-  <h2><%= @comment.comment_title %></h2>
-  <p><%=	@comment.comment_text %></p>
-  <%=	link_to 'Edit Post', edit_comment_path(@comment) %>
+  <h1><%=	image_tag 'post-icon.png' %> <%= "Post number #{@comment.id}" %></h1>
+  <div class="comment-wrapper">
+    <h2><%= @comment.comment_title %></h2>
+    <p><%=	@comment.comment_text %></p>
+    <%=	link_to 'Edit', edit_comment_path(@comment), 'class' => 'btn btn-warning' %>
+    <%=	link_to 'Delete', comment_path, method: :delete, data: { confirm: 'Are you sure?'}, 'class' => 'btn btn-danger'  %>
+  </div>
 </div>
