@@ -1,5 +1,13 @@
 <div class="container">
 
+  <% if flash["alert-success"] %>
+    <div class="alert alert-success"><%= flash["alert-success"]%></div>
+  <% end %>
+
+  <% flash.each do |key,value|%>
+    <div class="bg-<%= key %> flash-message"> <%= value %>  </div>
+  <% end %>
+  
   <div class="sign-in-wrapper">
     <h1>Login</h1>
     <div class="sign-in-form">

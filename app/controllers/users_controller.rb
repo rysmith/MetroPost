@@ -15,13 +15,14 @@ class UsersController < ApplicationController
     #.create is a method we get from AR.
     #it returns a new object in local memory with the specified params
     #it then saves the hash object in the database.
-    if User.create user_params
-
-      flash[:success] = 'You have been registered, please login.'
+    @user = User.create user_params
+    if @user.save
+      session[:user_id] = @user.id.to_s
+      flash['alert-success'] = "You have been registered #{@user.username}, please login."
       redirect_to new_session_path
     else
-      flash[:error] = 'Unable to create a user account.'
-      redirect_to new_user
+      flash['alert-warning'] = 'Unable to create a user account.'
+      redirect_to new_user_path
     end
   end
 

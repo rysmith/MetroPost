@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
       flash[:success] = 'Login successful'
 
       #redirect the view to welcome#index
-      redirect_to welcome_path
+      redirect_to comments_path
     else
 
       flash[:danger] = 'incorrect password or email, give it another try...'
