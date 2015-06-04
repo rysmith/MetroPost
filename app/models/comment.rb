@@ -6,4 +6,6 @@ class Comment < ActiveRecord::Base
   has_many :commentstops
   has_many :stops,through: :commentstops
 
+  belongs_to :user
+
 end

@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   #need to update with line information
   def create
     comment = Comment.new(params.require(:comment).permit(:comment_title, :comment_text))
+    current_user.comments.push comment
     if comment.save
       redirect_to comments_path
     else

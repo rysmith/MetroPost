@@ -29,4 +29,6 @@ class User < ActiveRecord::Base
   has_many :userstops
   has_many :stops,through: :userstops
 
+  has_many :comments
+
 end
