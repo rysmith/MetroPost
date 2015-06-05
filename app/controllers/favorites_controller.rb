@@ -30,4 +30,11 @@ class FavoritesController < ApplicationController
       redirect_to new_favorite
     end
   end
+
+  def destroy
+    @favorite = Userline.find(params[:id])
+    @favorite.destroy
+
+    redirect_to favorites_path
+  end
 end

@@ -23,11 +23,15 @@
   <div class="row">
     <div class="col-md-4">
       <div class="marketing">
-        <%=	image_tag 'post-icon.png' %>
+        <% if current_user %>
+          <%=	link_to image_tag('post-icon.png'), new_comment_path %>
+        <% else	%>
+          <%=	link_to image_tag('post-icon.png'), new_session_path %>
+        <% end %>
         <h2>Make A Post</h2>
       </div>
       <p>
-        If you haven't created an account yet,
+        If you haven't created an account yet, go ahead and
         <%= link_to 'sign up now', new_user_path, 'class' => 'btn btn-primary btn-xs' %>.
         Then, make a post about the LA metro.
         First, pick the line (or lines) you would like to comment on.
@@ -37,19 +41,27 @@
     </div>
     <div class="col-md-4">
       <div class="marketing">
-        <%=	image_tag 'fav-icon.png' %>
+        <% if current_user %>
+          <%=	link_to image_tag('fav-icon.png'), favorites_path %>
+        <% else	%>
+          <%=	link_to image_tag('fav-icon.png'), new_session_path %>
+        <% end	%>
         <h2>Star A Line</h2>
       </div>
       <p>
-        Once you've signed up you can create some favorite lines.
-        This will help to tailor your feed to only the most relevant information.
+        Now that you've signed up, you can create some favorite lines.
+        This will help to tailor your feed with only the most relevant information.
         If you don't want any favorites, no problem, you can check out information
-        for every Metro line!
+        for every Metro line.
       </p>
     </div>
     <div class="col-md-4">
       <div class="marketing">
-        <%=	image_tag 'info-icon.png' %>
+        <% if current_user %>
+          <%=	link_to image_tag('info-icon.png'), comments_path %>
+        <% else	%>
+          <%=	link_to image_tag('info-icon.png'), new_session_path %>
+        <% end	%>
         <h2>Stay Informed</h2>
       </div>
       <p>
@@ -57,7 +69,7 @@
         only see information about the lines you use and care about.
         When you make posts about a specific line,
         you'll be helping to keep the community informed about what's
-        happening on the LA Metro!
+        happening on the LA Metro.
       </p>
     </div>
   </div>

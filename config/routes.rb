@@ -36,12 +36,12 @@ Rails.application.routes.draw do
   get 'comments/:id' => 'comments#show', as: :comment
 
   #GET all of a users favorites and show them in index
-  get 'favorites/index' => 'favorites#index', as: :favorites
+  get '/favorites' => 'favorites#index', as: :favorites
 
-  get 'favorites/new' => 'favorites#new', as: :new_favorite
-  post 'favorites/create' => 'favorites#create', as: :create_favorite
+  get '/favorites/new' => 'favorites#new', as: :new_favorite
+  post '/favorites/create' => 'favorites#create', as: :create_favorite
 
-  delete 'favorites/:id' => 'favorites#destroy'
+  delete '/favorites' => 'favorites#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

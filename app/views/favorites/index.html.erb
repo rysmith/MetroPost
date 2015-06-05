@@ -2,6 +2,8 @@
 <div class="container">
   <h1> <%=	image_tag 'fav-icon.png' %> Favorite Lines</h1>
   <div class="fav-index-wrapper">
+    <%= link_to 'create a new favorite', new_favorite_path, 'class' => 'btn btn-primary btn-block btn-xs' %>
+    <hr/>
     <% @favorites.each do |favorite| %>
       <% if favorite[:user_id] == session[:user_id] %>
         <% case favorite[:line_id] %>
@@ -9,33 +11,73 @@
           <p>
             <%= image_tag 'blue-circle.png'%>
             801 Blue Line
+            <%=
+                link_to 'Delete',
+                        favorites_path(id: favorite.id),
+                        method: :delete, data: { confirm: 'Are you sure?'},
+                        'class' => 'btn btn-danger btn-sm pull-right'
+            %>
           </p>
         <% when 2 %>
           <p>
             <%= image_tag 'red-circle.png'%>
             802 Red Line
+            <%=
+                link_to 'Delete',
+                        favorites_path(id: favorite.id),
+                        method: :delete, data: { confirm: 'Are you sure?'},
+                        'class' => 'btn btn-danger btn-sm pull-right'
+            %>
+
           </p>
         <% when 3 %>
           <p>
             <%= image_tag 'green-circle.png'%>
             803 Green Line
+            <%=
+                link_to 'Delete',
+                        favorites_path(id: favorite.id),
+                        method: :delete, data: { confirm: 'Are you sure?'},
+                        'class' => 'btn btn-danger btn-sm pull-right'
+            %>
+
           </p>
         <% when 4 %>
           <p>
             <%= image_tag 'gold-circle.png'%>
             804 Gold Line
+            <%=
+                link_to 'Delete',
+                        favorites_path(id: favorite.id),
+                        method: :delete, data: { confirm: 'Are you sure?'},
+                        'class' => 'btn btn-danger btn-sm pull-right'
+            %>
+
           </p>
         <% when 5 %>
           <p>
             <%= image_tag 'purple-circle.png'%>
             805 Purple Line
+            <%=	link_to 'Delete',
+                         favorites_path(id: favorite.id),
+                         method: :delete, data: { confirm: 'Are you sure?'},
+                         'class' => 'btn btn-danger btn-sm pull-right'
+            %>
+
           </p>
         <% when 6 %>
           <p>
             <%= image_tag 'expo-circle.png'%>
             806 Expo Line
+            <%=
+                link_to 'Delete',
+                         favorites_path(id: favorite.id),
+                        method: :delete, data: { confirm: 'Are you sure?'},
+                        'class' => 'btn btn-danger btn-sm pull-right'  %>
+
           </p>
         <% end %>
+        <hr/>
       <% end %>
     <% end %>
   </div>
