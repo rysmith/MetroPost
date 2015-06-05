@@ -28,16 +28,25 @@ Rails.application.routes.draw do
   get 'comments/:id/edit' => 'comments#edit', as: :edit_comment
   patch 'comments/:id' => 'comments#update'
 
+  #DELETE a particular comment in the db
   delete 'comments/:id' => 'comments#destroy'
 
-  #show a particular comment
+  #GET a particular comment and show it
   #this needs to be below the new#comment
   get 'comments/:id' => 'comments#show', as: :comment
+
+  #GET all of a users favorites and show them in index
+  get 'favorites/index' => 'favorites#index', as: :favorites
+
+  get 'favorites/new' => 'favorites#new', as: :new_favorite
+  post 'favorites/create' => 'favorites#create', as: :create_favorite
+
+  delete 'favorites/:id' => 'favorites#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  #You can have the root of your site routed with "root"
+  #send site visitors to the index page first
   root 'welcome#index'
 
   # Example of regular route:

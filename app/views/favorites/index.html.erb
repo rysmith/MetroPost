@@ -1,0 +1,47 @@
+
+<div class="container">
+  <h1> <%=	image_tag 'fav-icon.png' %> Favorite Lines</h1>
+  <div class="fav-index-wrapper">
+    <% @favorites.each do |favorite| %>
+
+      <% case favorite.line_id %>
+        <% when 801 %>
+          <p>
+            <%= image_tag 'blue-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+        <% when 802 %>
+          <p>
+            <%= image_tag 'red-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+        <% when 803 %>
+          <p>
+            <%= image_tag 'green-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+        <% when 804 %>
+          <p>
+            <%= image_tag 'gold-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+        <% when 805 %>
+          <p>
+            <%= image_tag 'purple-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+        <% when 806 %>
+          <p>
+            <%= image_tag 'expo-circle.png'%>
+            <%=	favorite.line_id %>
+            <%= favorite.line_name %>
+          </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
