@@ -1,2 +1,13 @@
-<h1>Favorites#new</h1>
-<p>Find me in app/views/favorites/new.html.erb</p>
+<h1>You should be able too add a favorite line here.</h1>
+<%= form_for @favorite, url: create_favorite_path do |f| %>
+
+  <%=	f.select(:line_id, [
+                        ['Blue Line', '1'],
+                        ['Red Line', '2'],
+                        ['Green Line' ,'3'],
+                        ['Gold Line', '4'],
+                        ['Purple Line', '5'],
+                        ['Expo Line', '6']
+                        ]) %>
+  <%=	f.submit 'submit', 'class' => 'btn btn-primary' %>
+<% end %>
