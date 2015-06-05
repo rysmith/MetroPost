@@ -3,44 +3,39 @@
   <h1> <%=	image_tag 'fav-icon.png' %> Favorite Lines</h1>
   <div class="fav-index-wrapper">
     <% @favorites.each do |favorite| %>
-
-      <% case favorite.line_id %>
-        <% when 801 %>
+      <% if favorite[:user_id] == session[:user_id] %>
+        <% case favorite[:line_id] %>
+    <% when 1 %>
           <p>
             <%= image_tag 'blue-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            801 Blue Line
           </p>
-        <% when 802 %>
+        <% when 2 %>
           <p>
             <%= image_tag 'red-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            802 Red Line
           </p>
-        <% when 803 %>
+        <% when 3 %>
           <p>
             <%= image_tag 'green-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            803 Green Line
           </p>
-        <% when 804 %>
+        <% when 4 %>
           <p>
             <%= image_tag 'gold-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            804 Gold Line
           </p>
-        <% when 805 %>
+        <% when 5 %>
           <p>
             <%= image_tag 'purple-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            805 Purple Line
           </p>
-        <% when 806 %>
+        <% when 6 %>
           <p>
             <%= image_tag 'expo-circle.png'%>
-            <%=	favorite.line_id %>
-            <%= favorite.line_name %>
+            806 Expo Line
           </p>
+        <% end %>
       <% end %>
     <% end %>
   </div>

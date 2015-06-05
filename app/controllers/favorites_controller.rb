@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Line.all
+    @favorites = Userline.all
   end
 
   def new
