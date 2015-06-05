@@ -9,71 +9,72 @@
     <%=	image_tag 'blue-circle.png', 'class' => 'circle-img-jumbo'%>
     <%=	image_tag 'expo-circle.png', 'class' => 'circle-img-jumbo'%>
     <%=	image_tag 'green-circle.png', 'class' => 'circle-img-jumbo'%>
-  </div>
+  </div> <!-- circles-jumbo end-->
 
   <!-- hide sign up button upon login -->
   <% unless current_user %>
     <p> <%= link_to 'Sign Up', new_user_path, 'class' => 'btn btn-primary btn-lg' %> </p>
   <% end %>
 
-</div>
+</div><!-- jumbotron end-->
 
 <div class="container">
-
-  <div class="row">
-    <div class="col-md-4">
-      <div class="marketing">
-        <% if current_user %>
-          <%=	link_to image_tag('post-icon.png'), new_comment_path %>
-        <% else	%>
-          <%=	link_to image_tag('post-icon.png'), new_session_path %>
-        <% end %>
-        <h2>Make A Post</h2>
-      </div>
-      <p>
-        If you haven't created an account yet, go ahead and
-        <%= link_to 'sign up now', new_user_path, 'class' => 'btn btn-primary btn-xs' %>.
-        Then, make a post about the LA metro.
-        First, pick the line (or lines) you would like to comment on.
-        Create a title and body for your post.
-        Then, click submit.  It's that easy.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <div class="marketing">
-        <% if current_user %>
-          <%=	link_to image_tag('fav-icon.png'), favorites_path %>
-        <% else	%>
-          <%=	link_to image_tag('fav-icon.png'), new_session_path %>
-        <% end	%>
-        <h2>Star A Line</h2>
-      </div>
-      <p>
-        Now that you've signed up, you can create some favorite lines.
-        This will help to tailor your feed with only the most relevant information.
-        If you don't want any favorites, no problem, you can check out information
-        for every Metro line.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <div class="marketing">
-        <% if current_user %>
-          <%=	link_to image_tag('info-icon.png'), comments_path %>
-        <% else	%>
-          <%=	link_to image_tag('info-icon.png'), new_session_path %>
-        <% end	%>
-        <h2>Stay Informed</h2>
-      </div>
-      <p>
-        Once you've got some favorite lines, we'll tailor your feed so you
-        only see information about the lines you use and care about.
-        When you make posts about a specific line,
-        you'll be helping to keep the community informed about what's
-        happening on the LA Metro.
-      </p>
-    </div>
-  </div>
-</div>
+  <div class="marketing-wrapper">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="marketing">
+          <% if current_user %>
+            <%=	link_to image_tag('post-icon.png'), new_comment_path %>
+          <% else	%>
+            <%=	link_to image_tag('post-icon.png'), new_session_path %>
+          <% end %>
+          <h2>Make A Post</h2>
+        </div><!-- marketing end -->
+        <p>
+          If you haven't created an account yet, go ahead and
+          <%= link_to 'sign up now', new_user_path, 'class' => 'btn btn-primary btn-xs' %>.
+          Then, make a post about the LA metro.
+          First, pick the line (or lines) you would like to comment on.
+          Create a title and body for your post.
+          Then, click submit.  It's that easy.
+        </p>
+      </div><!-- col-md-4 end -->
+      <div class="col-md-4">
+        <div class="marketing">
+          <% if current_user %>
+            <%=	link_to image_tag('fav-icon.png'), favorites_path %>
+          <% else	%>
+            <%=	link_to image_tag('fav-icon.png'), new_session_path %>
+          <% end	%>
+          <h2>Star A Line</h2>
+        </div><!-- marketing end -->
+        <p>
+          Now that you've signed up, you can create some favorite lines.
+          This will help to tailor your feed with only the most relevant information.
+          If you don't want any favorites, no problem, you can check out information
+          for every Metro line.
+        </p>
+      </div><!-- col-md-4 end -->
+      <div class="col-md-4">
+        <div class="marketing">
+          <% if current_user %>
+            <%=	link_to image_tag('info-icon.png'), comments_path %>
+          <% else	%>
+            <%=	link_to image_tag('info-icon.png'), new_session_path %>
+          <% end	%>
+          <h2>Stay Informed</h2>
+        </div><!-- marketing end -->
+        <p>
+          Once you've got some favorite lines, we'll tailor your feed so you
+          only see information about the lines you use and care about.
+          When you make posts about a specific line,
+          you'll be helping to keep the community informed about what's
+          happening on the LA Metro.
+        </p>
+      </div><!-- col-md-4 end -->
+    </div><!-- row end-->
+  </div><!-- marketing-wrapper end-->
+</div><!-- container end-->
 
 
 
