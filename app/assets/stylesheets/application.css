@@ -31,12 +31,22 @@
     border: none;
 }
 
-footer {
-    padding-top: 25px;
-    background-color: #5BE365;
-    height: 65px;
+html {
+    position: relative;
+    min-height: 100%;
 }
-
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    padding-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #5BE365;
+}
 
 /*body {
     background: url("");
