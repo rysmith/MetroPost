@@ -6,6 +6,11 @@ class FavoritesController < ApplicationController
     #in the index view we are only showing the current_user's favorites
     @favorites = Userline.all
 
+    #display the username when logged in
+    if current_user
+      @welcome_message = "Welcome, #{session[:user_username]}"
+    end
+
   end
 
 
@@ -13,6 +18,11 @@ class FavoritesController < ApplicationController
 
     #send over a new favorite object for the user to fill in
     @favorite = Userline.new
+
+    #display the username when logged in
+    if current_user
+      @welcome_message = "Welcome, #{session[:user_username]}"
+    end
 
   end
 

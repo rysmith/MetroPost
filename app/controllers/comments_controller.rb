@@ -6,6 +6,11 @@ class CommentsController < ApplicationController
     #show all comments in the comment view
     @comments = Comment.all
 
+    #display the username when logged in
+    if current_user
+      @welcome_message = "Welcome, #{session[:user_username]}"
+    end
+
   end
 
 
@@ -13,6 +18,11 @@ class CommentsController < ApplicationController
 
     #create a new comment object and send it over to the form
     @comment = Comment.new
+
+    #display the username when logged in
+    if current_user
+      @welcome_message = "Welcome, #{session[:user_username]}"
+    end
 
   end
 
