@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   #goal? receive user data, validate it, POST to the db
   #it seems to still output true even if a 'presence: true' condition fails
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: { case_sensitive: false },
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :password, presence: true, length: { in: 8..15 },
