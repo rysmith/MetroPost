@@ -14,6 +14,9 @@
       <%=	f.submit 'submit', 'class' => 'btn btn-primary btn-xs' %>
     <% end %>
     </div>
+  <% if flash["favorites-warning"] %>
+    <div class="alert alert-warning"><%= flash["favorites-warning"]%></div>
+  <% end %>
 
   </div>
 </div>

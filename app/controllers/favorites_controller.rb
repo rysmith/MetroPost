@@ -37,7 +37,8 @@ class FavoritesController < ApplicationController
     if user_line.save
       redirect_to favorites_path
     else
-      redirect_to new_favorite
+      redirect_to new_favorite_path
+      flash['favorites-warning'] = 'Looks like this is already a favorite line.'
     end
   end
 
