@@ -3,6 +3,10 @@
   <div class="comment-wrapper">
     <p><%=	@comment.comment_text %></p>
   </div>
-  <%=	link_to 'Edit', edit_comment_path(@comment), 'class' => 'btn btn-warning' %>
-  <%=	link_to 'Delete', comment_path, method: :delete, data: { confirm: 'Are you sure?'}, 'class' => 'btn btn-danger'  %>
+  <%	if session[:user_id] == @comment.user_id  %>
+    <%=	link_to 'Edit', edit_comment_path(@comment), 'class' => 'btn btn-warning' %>
+    <%=	link_to 'Delete', comment_path, method: :delete, data: { confirm: 'Are you sure?'}, 'class' => 'btn btn-danger'  %>
+  <% end %>
+  <%=	link_to 'All Posts', comments_path(@comment), 'class' => 'btn btn-primary' %>
+
 </div>

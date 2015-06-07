@@ -59,6 +59,10 @@ class CommentsController < ApplicationController
 
     @comment = Comment.find(params[:id])
 
+    #display the username when logged in
+    if current_user
+      @welcome_message = "Welcome, #{session[:user_username]}"
+    end
   end
 
   def edit
