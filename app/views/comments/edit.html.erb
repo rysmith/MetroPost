@@ -4,9 +4,6 @@
     <h1>Edit Post</h1>
     <div class="form-group new-comment-form">
       <%= form_for @comment do |f| %>
-        <%=	f.label :user_id %>
-        <%=	f.text_field :user_id, 'class' => 'form-control' %>
-        <br/>
         <%=	f.label :comment_title %>
         <%=	f.text_field :comment_title, 'class' => 'form-control' %>
         <br/>
