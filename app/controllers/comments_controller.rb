@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
 
     #create a new comment object and send it over to the form
     @comment = Comment.new
+    # @comment_line = Commentline.new
 
     #display the username when logged in
     if current_user
@@ -32,9 +33,11 @@ class CommentsController < ApplicationController
 
     #receive params from view and add them to the db
     comment = Comment.new(params.require(:comment).permit(:comment_title, :comment_text))
+    # comment_line = Commentline.new(params.require(:comment_line).permit(:line_id))
 
-    #auto update the user_id foreign key with the current_user's user_id
+    #auto update the commentlines table with foreign key from comment and line
     current_user.comments.push comment
+    # comment.commentlines.push comment_line
 
     if comment.save
 
@@ -82,7 +85,10 @@ class CommentsController < ApplicationController
   def destroy
 
     @comment = Comment.find(params[:id])
+    @comment_line = Commentline.find_by(comment_id: params[:id])
+    @comment_line.destroy
     @comment.destroy
+
 
     redirect_to comments_path
 
