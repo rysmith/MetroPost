@@ -89,9 +89,10 @@ class CommentsController < ApplicationController
   def destroy
 
     @comment = Comment.find(params[:id])
-    @comment_line = Commentline.find_by(comment_id: params[:id])
-    @comment_line.destroy
     @comment.destroy
+    # @comment_line = Commentline.find_by(comment_id: params[:id])
+    # @comment_line.destroy
+
 
 
     redirect_to comments_path
