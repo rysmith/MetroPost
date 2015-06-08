@@ -14,6 +14,14 @@
  *= require_self
  */
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
 .navbar {
     background-color: #5BE365;
     height: 70px;
@@ -31,14 +39,10 @@
     border: none;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
+.welcome-message {
+    color: black;
 }
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
+
 .footer {
     padding-top: 20px;
     position: absolute;

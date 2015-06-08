@@ -25,11 +25,11 @@
         <!--Toggle between the login and logout button links-->
         <!-- current_user is a helper method exposed by the application controller-->
         <% if current_user %>
-          <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-link navbar-btn pull-right' %>
-          <div class="navbar-text navbar-right"> <%= @welcome_message %>  </div>
+          <%= link_to 'Logout', destroy_session_path, 'class' => 'btn btn-primary btn-xs navbar-btn pull-right' %>
+          <div class="navbar-text navbar-right"> <span class="welcome-message"><%= @welcome_message %></span></div>
         <% else %>
-          <%= link_to 'Sign Up', new_user_path, 'class' => 'btn btn-link navbar-btn pull-right' %>
-          <%= link_to 'Login', new_session_path, 'class' => 'btn btn-link navbar-btn pull-right' %>
+          <%= link_to 'Sign Up', new_user_path, 'class' => 'btn btn-primary btn-xs navbar-btn pull-right' %>
+          <%= link_to 'Login', new_session_path, 'class' => 'btn btn-primary btn-xs navbar-btn pull-right' %>
         <% end %>
 
 
