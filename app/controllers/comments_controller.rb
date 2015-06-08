@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def index
 
     #show all comments in the comment view
-    @comments = Comment.all
+    @comments = Comment.all.order(created_at: :desc)
 
     #display the username when logged in
     if current_user
