@@ -3,12 +3,22 @@ class User < ActiveRecord::Base
   #hashing of password_digest?
   has_secure_password
 
-  #goal? receive user data, validate it, POST to the db
-  #it seems to still output true even if a 'presence: true' condition fails
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50},
+  #receive user data, validate it, POST to the db
+  validates :username,
+            presence: true,
+            uniqueness: { case_sensitive: false },
+            length: { maximum: 50 }
+
+  validates :email,
+            presence: true,
+            uniqueness: { case_sensitive: false },
+            length: { maximum: 50},
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  validates :password, presence: true, length: { in: 8..15 },
+
+  validates :password,
+            presence: true,
+            format: { with: /(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/ },
+            length: { maximum: 50 },
             confirmation: true
 
   #the model defines the relationships between the different tables
