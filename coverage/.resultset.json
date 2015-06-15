@@ -1,0 +1,67 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/rps/big_hippo/projects/metropost/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/favorites_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/session_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rps/big_hippo/projects/metropost/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1434393051
+  }
+}

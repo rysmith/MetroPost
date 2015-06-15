@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
 
     #auto update the commentlines table with foreign key from comment and line
     current_user.comments.push comment
-    # comment.commentlines.push comment_line
+    # line.push comment
 
     if comment.save
 
