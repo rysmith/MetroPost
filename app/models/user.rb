@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
             length: { maximum: 50},
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
+  #password must be at least 8 chars with one number and one letter
   validates :password,
             presence: true,
             format: { with: /(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/ },

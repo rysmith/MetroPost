@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
 
+  # EMAIL TESTING
   context 'email' do
 
     it 'must be present' do
@@ -42,9 +43,10 @@ RSpec.describe User, :type => :model do
     end
   end
 
+  #USERNAME TESTING
   context 'username' do
 
-    it 'must be valid' do
+    it 'must be at least one char' do
 
       expect(FactoryGirl.build(:valid_user).save).to be true
     end
@@ -58,9 +60,9 @@ RSpec.describe User, :type => :model do
 
       expect(FactoryGirl.build(:username_too_long).save).to be false
     end
-
   end
 
+  #PASSWORD TESTING
   context 'password' do
 
     it 'must be present' do
@@ -93,5 +95,4 @@ RSpec.describe User, :type => :model do
       expect(FactoryGirl.build(:insecure_password).save).to be false
     end
   end
-
 end
