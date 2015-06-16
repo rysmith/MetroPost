@@ -14,12 +14,14 @@ RSpec.describe 'Logout', :type => :feature do
         fill_in 'Email', with: 'test@test.com'
         fill_in 'Password', with: 'password1'
         click_on 'Login'
+
         expect(current_path).to eq(comments_path)
       end
 
       visit comments_path
 
       click_on 'Logout'
+
       expect(current_path).to eq(new_session_path)
     end
   end
