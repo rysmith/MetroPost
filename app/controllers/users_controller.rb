@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #hide user_params method
   private
 
   def user_params
