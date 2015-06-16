@@ -12,7 +12,7 @@ deploy:
   provider: heroku
   api_key:
     secure: ZwiWPBA11h41uWImhp78zRLedQ+hIEwZU/EQqNeJwiHFG/YuvctLR89xz1JsbbeqqDKE4zwQJK1r7g+Dp7Lb5mW86dAk9rPlh80kEtp5eJkJZBKxqlmaOD7PIppFyVeafCq5IfVcyKtquQXOI35IOEJL1wCbgnTLebnI5jMO7Sps9JFqp26GMbmaoYV/mHTZJFsTs2yEpV0wwN9wA1mdFjPbUuJuy9QTQRDqvMQgK5u4HPsrUFkphT9GEa2slDQhI4z0G58RzvHYikR+YMY3K80/DYBl7xM4RZayCoG+uHJ4Z6VsHOrYIQli6IbPCR7AUkTILZdPGkcSk6mOCWegABJA/Ec8zev71HKDHJh2osxXa8We5UA0WBw+0C2qCJ/SKxRHNMQbYYZVIQoDHhqpHhx99ZpPggTWIG84oUhnJOux5fIBNYXlVZCmescmexDZCJF7uKBFxG8WsJ2BJshNgIW/w5ZWKQGShZGdpVDklz2y5UJR/CSKxNE5Ug4UYHAimlQ5Lb7c2hmDVSMYQRY2pGeCOvY6u4UPGm2Hr0WYl5QW433p13AGPntm76AFX+dOL23uFKjprvr0HEKpLyi0DjACQn5J/+HPK1ypiwO8rfnsZoltfOkeaklGcHRIsStsIAjSWKBIoSuIl78lHm6PUkCscK6RjLxAGnKbTuiForo=
-app: whispering-woodland-6524
-run:
-  - "rake db:migrate"
-  - restart
+  app: whispering-woodland-6524
+  run:
+    - "rake db:migrate"
+    - restart
