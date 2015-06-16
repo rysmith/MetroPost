@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rysmith/MetroPost.svg?branch=master)](https://travis-ci.org/rysmith/MetroPost)
+
 ###MetroPost
 
 MetroPost is a place to share information 
