@@ -23,27 +23,18 @@ RSpec.describe UsersController, :type => :controller do
     expect(response).to have_http_status(200)
   end
 
-  it 'should allow creation of a valid user' do
+  it 'should allow creation of a valid user and redirect to a the login view' do
 
-    user_params = {
-        username: "ryan",
-        email: "ryan@ryan.com",
-        password: "12345678a",
-        password_confirmation: "12345678a"
-    }
+    user_params = FactoryGirl.attributes_for(:valid_user)
 
     post :create, user: user_params
 
     expect(response).to redirect_to(:new_session)
   end
 
-  it 'should not allow creation of an invalid user' do
-    user_params = {
-        username: "ryan",
-        email: "ryanryan.com",
-        password: "12345678a",
-        password_confirmation: "12345678a"
-    }
+  it 'should not allow creation of an invalid user and redirect back to the new user view' do
+
+    user_params = FactoryGirl.attributes_for(:insecure_password)
 
     post :create, user: user_params
 
